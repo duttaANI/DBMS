@@ -168,5 +168,193 @@ PL/SQL procedure successfully completed.
 
 Q8)
 
+<-----------------------------------------KEERTANs CODE------------------------------------------------------->
 
+CREATE TABLE Student
+(
+RollNo Number(1) PRIMARY KEY,
+Gpa NumERIC(3,2));
+
+INSERT INTO Student VALUES(1,5.8);
+
+INSERT INTO Student VALUES(2,6.5);
+
+INSERT INTO Student VALUES(3,3.4);
+
+INSERT INTO Student VALUES(4,7.8);
+
+INSERT INTO Student VALUES(5,9.5);
+
+DECLARE
+	ROLL Student.RollNo%Type;
+	GP Student.Gpa%Type;
+BEGIN
+	ROLL:=&R;
+	SELECT GPA INTO GP FROM STUDENT WHERE RollNo=ROLL;
+	DBMS_OUTPUT.PUT_LINE(GP);
+END;
+/
+
+DECLARE
+	ROLL Student.RollNo%Type;
+	GP Student.Gpa%Type;
+BEGIN
+	ROLL:=&R;
+	SELECT GPA INTO GP FROM STUDENT WHERE RollNo=ROLL;
+	
+	IF (GP<4) THEN
+	DBMS_OUTPUT.PUT_LINE('The grade is F');
+
+	ELSIF(GP<5) THEN
+	DBMS_OUTPUT.PUT_LINE('The grade is E');
+
+	ELSIF(GP<6) THEN
+	DBMS_OUTPUT.PUT_LINE('The grade is D');
+	
+	ELSIF(GP<7) THEN
+	DBMS_OUTPUT.PUT_LINE('The grade is C');
+	
+	ELSIF(GP<8) THEN
+	DBMS_OUTPUT.PUT_LINE('The grade is B');
+
+	ELSIF(GP<9) THEN
+	DBMS_OUTPUT.PUT_LINE('The grade is A');
+
+	ELSIF(GP<10) THEN
+	DBMS_OUTPUT.PUT_LINE('The grade is A+');
+	
+	ELSE
+	DBMS_OUTPUT.PUT_LINE('The grade Cannot be assigned');
+	END IF;
+END;
+/
+
+ALTER TABLE Student ADD(LetGrad VARCHAR(2));
+
+DECLARE
+	ROLL Student.RollNo%Type;
+	GP Student.Gpa%Type;
+	LG Student.LetGrad%Type;
+BEGIN
+	ROLL:=1;
+	WHILE (ROLL<6)
+	LOOP
+	SELECT GPA INTO GP FROM STUDENT WHERE RollNo=ROLL;
+	
+	IF (GP<4) THEN
+	UPDATE Student SET LetGrad='F' WHERE RollNo=ROLL;
+
+	ELSIF(GP<5) THEN
+	UPDATE Student SET LetGrad='E' WHERE RollNo=ROLL;
+
+
+	ELSIF(GP<6) THEN
+	UPDATE Student SET LetGrad='D' WHERE RollNo=ROLL;
+
+	
+	ELSIF(GP<7) THEN
+	UPDATE Student SET LetGrad='C' WHERE RollNo=ROLL;
+
+	
+	ELSIF(GP<8) THEN
+	UPDATE Student SET LetGrad='B' WHERE RollNo=ROLL;
+
+
+	ELSIF(GP<9) THEN
+	UPDATE Student SET LetGrad='A' WHERE RollNo=ROLL;
+
+
+	ELSIF(GP<10) THEN
+	UPDATE Student SET LetGrad='A+' WHERE RollNo=ROLL;
+
+	
+	ELSE
+	UPDATE Student SET LetGrad = NULL WHERE RollNo=ROLL;
+
+	END IF;
+	ROLL:=ROLL+1;
+	END LOOP;
+END;
+/
+
+DECLARE
+	ROLL Student.RollNo%Type;
+	GP Student.Gpa%Type;
+	LG Student.LetGrad%Type;
+	MA Student.Gpa%Type;
+BEGIN
+	ROLL:=1;
+	MA:=0;
+	WHILE (ROLL<6)
+	LOOP
+	SELECT GPA INTO GP FROM STUDENT WHERE RollNo=ROLL;
+	
+	IF GP>MA THEN
+	MA:=GP;
+	END IF;
+	ROLL:=ROLL+1;
+	END LOOP;
+	DBMS_OUTPUT.PUT_LINE(MA);
+END;
+/
+
+DECLARE
+	NAM INSTRUCTOR.NAME%TYPE;
+	INSTR INSTRUCTOR%ROWTYPE;
+BEGIN
+	NAM:='&NA';
+	SELECT * INTO INSTR FROM Instructor WHERE INSTRUCTOR.Name=NAM;
+	EXCEPTION
+	WHEN TOO_MANY_ROWS THEN DBMS_OUTPUT.PUT_LINE('MULTIPLE RECORDS EXIST WITH SAME NAME');
+	WHEN NO_DATA_FOUND THEN DBMS_OUTPUT.PUT_LINE('NO RECORDS EXIST WITH THE NAME');
+END;
+/
+
+DECLARE
+	OUT_OF_RANGE Exception;
+	ROLL Student.RollNo%Type;
+	GP Student.Gpa%Type;
+	LG Student.LetGrad%Type;
+BEGIN
+	ROLL:=1;
+	WHILE (ROLL<6)
+	LOOP
+	SELECT GPA INTO GP FROM STUDENT WHERE RollNo=ROLL;
+	
+	IF (GP<4) THEN
+	UPDATE Student SET LetGrad='F' WHERE RollNo=ROLL;
+
+	ELSIF(GP<5) THEN
+	UPDATE Student SET LetGrad='E' WHERE RollNo=ROLL;
+
+
+	ELSIF(GP<6) THEN
+	UPDATE Student SET LetGrad='D' WHERE RollNo=ROLL;
+
+	
+	ELSIF(GP<7) THEN
+	UPDATE Student SET LetGrad='C' WHERE RollNo=ROLL;
+
+	
+	ELSIF(GP<8) THEN
+	UPDATE Student SET LetGrad='B' WHERE RollNo=ROLL;
+
+
+	ELSIF(GP<9) THEN
+	UPDATE Student SET LetGrad='A' WHERE RollNo=ROLL;
+
+
+	ELSIF(GP<10) THEN
+	UPDATE Student SET LetGrad='A+' WHERE RollNo=ROLL;
+
+	
+	ELSE
+	RAISE OUT_OF_RANGE;
+
+	END IF;
+	ROLL:=ROLL+1;
+	END LOOP;
+	EXCEPTION
+	WHEN OUT_OF_RANGE THEN DBMS_OUTPUT.PUT_LINE('cANT EVALUATE GPA');
+END;
 
