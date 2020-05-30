@@ -1,0 +1,172 @@
+CREATE TABLE mitstudent(
+	roll number(5),
+	gpa number(3,2)
+);
+
+insert into mitstudent values(1,5.8);
+insert into mitstudent values(2,6.5);
+insert into mitstudent values(3,3.4);
+insert into mitstudent values(4,7.8);
+insert into mitstudent values(5,9.5);
+
+<-----------------------UNIV DATABASE------------------>
+SET SERVEROUTPUT ON
+DECLARE 
+	grade VARCHAR(20);
+	sname student.name%TYPE;
+	idno student.id%TYPE;
+	cred student.tot_cred%TYPE;
+BEGIN
+	idno := &number;
+	select name,tot_cred into sname,cred from student s where s.id = idno;
+	--sname := 'Hi';
+	dbms_output.put_line(sname);
+	dbms_output.put_line(cred);
+END;
+/
+<-----------------------UNIV DATABASE------------------>
+
+
+Q1)
+<----------------------MIT STUDENT--------------------->
+
+SET SERVEROUTPUT ON
+DECLARE 
+	grade VARCHAR(20);
+	idno mitstudent.roll%TYPE;
+	cgpa mitstudent.gpa%TYPE;
+BEGIN
+	idno := &number;
+	select gpa into cgpa from mitstudent s where s.roll = idno;
+	--sname := 'Hi';
+	
+	dbms_output.put_line(cgpa);
+END;
+/
+
+<----------------------MIT STUDENT--------------------->
+
+Q2)
+
+SET SERVEROUTPUT ON
+DECLARE 
+	grade CHAR(2);
+	idno mitstudent.roll%TYPE;
+	cgpa mitstudent.gpa%TYPE;
+BEGIN
+	idno := &number;
+	select gpa into cgpa from mitstudent s where s.roll = idno;
+	
+	IF (cgpa <= 4) THEN
+		dbms_output.put_line('F ');
+	ELSIF (cgpa <= 5) THEN
+		dbms_output.put_line('E ');
+	ELSIF (cgpa <= 6) THEN
+		dbms_output.put_line('D ');
+	ELSIF (cgpa <= 7) THEN
+		dbms_output.put_line('C ');
+	ELSIF (cgpa <= 8) THEN
+		dbms_output.put_line('B ');
+	ELSIF (cgpa <= 9) THEN
+		dbms_output.put_line('A ');
+	ELSE
+		dbms_output.put_line('A+');
+	END IF;
+
+	--dbms_output.put_line(grade);
+END;
+/
+
+OP=>
+Enter value for number: 1
+old   6:        idno := &number;
+new   6:        idno := 1;
+D
+
+Q5)
+
+ ALTER TABLE mitstudent add  LetterGrade VARCHAR2(2);
+
+---------------------------------------------------
+SET SERVEROUTPUT ON
+DECLARE 
+	grade mitstudent.LetterGrade%TYPE;
+	totno mitstudent.roll%TYPE;
+	cgpa mitstudent.gpa%TYPE;
+BEGIN
+	
+	--select 5 into totno from mitstudent ;
+	totno:=5;
+	dbms_output.put_line(totno);
+
+	WHILE totno > 0
+		LOOP
+			UPDATE mitstudent s set s.lettergrade =
+				CASE
+					WHEN (gpa <= 4) THEN 'F'
+					WHEN (gpa <= 5) THEN 'E'
+					WHEN (gpa <= 6) THEN 'D'
+					WHEN (gpa <= 7) THEN 'C'
+					WHEN (gpa <= 8) THEN 'B'
+					WHEN (gpa <= 9) THEN 'A'
+					ELSE
+						'A+'
+				END
+			WHERE s.roll = totno;
+                  	totno:=totno-1;
+		END LOOP;
+
+
+	--dbms_output.put_line(grade);
+END;
+/
+
+
+op=>
+5
+
+PL/SQL procedure successfully completed.
+
+---------------------------------------------------------
+
+Q6)
+
+
+SET SERVEROUTPUT ON
+DECLARE 
+	sid mitstudent.roll%TYPE;
+	totno mitstudent.roll%TYPE;
+	maxgpa mitstudent.gpa%TYPE;
+	curgpa mitstudent.gpa%TYPE;
+BEGIN
+	
+	--select 5 into totno from mitstudent ;
+	totno:=5;
+	dbms_output.put_line(totno);
+        select gpa into maxgpa from mitstudent s where s.roll = totno;
+        totno:=totno-1;
+
+	WHILE totno > 0
+		LOOP
+			select gpa into curgpa from mitstudent s where s.roll = totno;
+			IF (maxgpa < curgpa) THEN
+				maxgpa:=curgpa;
+			END IF;
+                  	totno:=totno-1;
+		END LOOP;
+
+	select roll into sid from mitstudent s where s.gpa = maxgpa;
+	dbms_output.put_line(sid);
+END;
+/
+
+op=>
+5
+5
+
+PL/SQL procedure successfully completed.
+
+Q8)
+
+
+
