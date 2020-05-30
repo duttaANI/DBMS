@@ -1,0 +1,176 @@
+MALLS IN MUMBAI
+
+1. Phoenix Market City, Kurla West, Mumbai
+2. R-City Mall, Ghatkopar West, Mumbai
+3. High Street Phoenix Mall, Lower Parel, Mumbai
+4. Infiniti Mall, Andheri West, Mumbai
+5. Oberoi Mall, Goregaon East, Mumbai
+6. Inorbit Mall, Malad West, Mumbai
+7. Atria, The Millennium Mall, Worli, Mumbai
+8. Raghuleela Mall, Vashi, Navi Mumbai
+9. Growel’s 101,  Kandivali East, Mumbai
+10. Sobo Central Brand Factory, Tardeo, Mumbai
+11. Link Square Mall, Bandra West, Mumbai
+12. Neptune Magnet Mall,Bhandup,Mumbai
+13. Raghuleela Mall,Kandivali,Navi Mumbai,Mumbai
+14. Viviana Mall,Thane West,Mumbai
+15. R Mall,Mulund,Mumbai
+16. Metro Junction Mall,Kalyan,Mumbai
+17. Palladium Mall,Lower Parel,Mumbai
+18. Dynamix Mall,Juhu,Mumbai
+19. The Hub Mall,Goregaon East,Mumbai
+20. Thakur Mall,Dahisar,Mumbai
+
+MALLS IN DELHI
+
+1. Select City Walk,Saket,Delhi-NCR
+2. DLF Promenade,Vasant Kunj,Delhi-NCR
+3. DLF Place,Saket,Delhi-NCR
+4. DLF Emporio,Vasant Kunj,Delhi-NCR
+5. Pacific Mall,Subhash Nagar,Delhi-NCR
+6. Ambience Mall,Vasant Kunj,Delhi-NCR
+7. DLF Mall of India,Noida,Delhi-NCR
+8. Ambience Mall,Gurgaon,Delhi-NCR
+9. The Great India Place,Noida,Delhi-NCR
+10. Garden's Galleria,Noida,Delhi-NCR
+11. Good Earth City Centre,Gurgaon,Delhi-NCR
+12. The Chanakya,Chanakyapuri,Delhi-NCR
+13. Ansal Plaza Mall,Andrews Ganj,South Delhi,Delhi-NCR
+14. TDI Mall,Shivaji Place,Delhi-NCR
+15. City Square Mall,Shivaji Place,Delhi-NCR
+16. Metro Walk Mall,Rohini,Delhi-NCR
+17. V3S Mall,Laxmi Nagar,Delhi-NCR
+18. Cross River Mall,Vishwas Nagar,Delhi-NCR
+19. Star City Mall,Mayur Vihar,Delhi-NCR
+20. DLF City Centre,Shaheed Udham Singh Marg,Delhi-NCR
+
+MALLS IN KOLKATA
+
+1. South City Mall,Jadavapur,Kolkata
+2. City Centre I,Salt Lake City,Kolkata
+3. City Centre II,Newtown,Kolkata
+4. Quest Mall,Park Circus,Kolkata
+5. Acropolis Mall,East Kolkata Township,Kolkata
+6. Mani Square Mall,Block A,Kolkata
+7. Avani Riverside Mall,Howrah,Kolkata
+8. Lake Mall,Kalighat,Kolkata
+9. Forum Courtyard,Bhowanipore,Kolkata
+10. Gariahat Mall,Ballygunge,Kolkata
+11. Axis Mall,Newtown,Kolkata
+12. Dakshinapan Shopping Complex,Dhaakuria,Kolkata
+13. Diamond Plaza,Satgachi,Kolkata
+14. E-Mall,Chittaranjan Avenue,Kolkata
+15. Star Mall,Madhyamgram,Kolkata
+16. Metropolis Mall,Hiland Park,Kolkata
+17. Simpark Mall,Dharmatala,Kolkata
+18. Uttarapan Shopping Complex,Kankurgachi,Kolkata
+19. Merlin Homeland Mall,Bhowanipore,Kolkata
+20. DLF Galleria,Newtown,Kolkata
+
+MALLS IN CHENNAI 
+
+1. Express Avenue,Royapettah,Chennai
+2. Spectrum Mall,Perambur,Chennai
+3. Ampa Skywalk,Aminjikarai,Chennai
+4. Phoenix Marketcity,Velacherry,Chennai
+5. Forum Vijaya Mall,Vadapalani.Chennai
+6. Spencer Plaza,Anna Salai,Chennai
+7. Bergamo Luxury Mall,Nungambakkam,Chennai
+8. Chennai Citi Centre,Mylapore,Chennai
+9. Ispahani Centre,Nungambakkam,Chennai
+10. Grand Square,Velachery,Chennai
+11. Alsa Mall,Egmore,Chennai
+12. VR Chennai,Anna Nagar,Chennai
+13. The Marina Mall,Egatoor,Chennai
+14. Saravana Stores,Purasawalkam High Rd,Chennai
+15. Palladium Mall,Velachery,Chennai 
+16. Abirami Mega Mall,Purasaiwakkam High Road,Chennai
+17. Welcome Shopping Mall,T.Nagar,Chennai
+18. Vivira Mall,Old Mahabalipuram Road,Chennai
+19. Chandra Metro Mall,Virugambakkam,Chennai
+20. Challa Mall,T.Nagar,Chennai
+
+MALLS IN BANGALORE
+
+1. Orion Mall, Rajaji Nagar, Bangalore
+2. Royal Meenakshi Mall, Bannerghatta Road,Bangalore
+3. Gopalan Mall, Bannerghatta Road,Bangalore
+4. Mantri Square, Malleswaram,Bangalore
+5. The Forum, Kormangala,Bangalore
+6. Phoenix Market City, Whitefield,Bangalore
+7. Bangalore Central, Jayanagar,Bangalore
+8. The Collection UB City,Vittal Mallya Road,Bangalore
+9. Garuda Mall, Magrath Road,Bangalore
+10. Inorbit Mall, Whitefield,Bangalore
+11. Leela Galleria, Old Airport Road,Bangalore
+12. Cosmos Mall, Kundanahalli,Bangalore 
+13. Total Mall, Madiwala,Bangalore
+14. The Forum Value, Whitefield,Bangalore
+15. Park Square Mall, Whitefield,Bangalore
+16. VR Bengaluru,Mahadevpura,Bangalore
+17. 1 MG Mall,MG Road,Bangalore
+18. Vega City Mall,Nagavarapalya,Bangalore
+19. Royal Meenakshi Mall,Hulimavu,Bangalore
+20. Esteem Mall,Kempapura Main Road,Bangalore
+
+MALLS IN HYDERABAD
+
+1. City Centre Shopping Mall,Banjara Hills,Hyderabad
+2. Inorbit Mall,Madhapur,Hyderabad
+3. Forum Sujana Mall,Kukatpally,Hyderabad
+4. Hyderabad Central Mall,Punjagutta,Hyderabad
+5. Babukhan Mall,Somajiguda,Hyderabad
+6. FMG Mall,Abids,Hyderabad
+7. Big Bazaar Supercenter Mall,Ameerpet,Hyderabad
+8. Shoppers Stop,Begumpet,Hyderabad
+9. MPM Mall,Abids,Hyderabad
+10. Sanali Mall,Abids,Hyderabad
+11. GVK One Mall,Banjara Hills,Hyderabad
+12. Next Galleria Mall,Punjagutta,Hyderabad
+13. Manjeera Trinity Mall,Kukatpally,Hyderabad
+14. Sarath Capital Mall,Kondapur,Hyderabad
+15. South India Shopping Mall,Kukatpally,Hyderabad
+16. Six Mall,Saroornagar,Hyderabad
+17. GS Mall,Somajiguda,Hyderabad
+18. Ashoka Metropolitan Mall,Banjara Hills,Hyderabad
+19. SVM Mall,Jubilee Hills,Hyderabad
+20. Amrutha Mall,Somajiguda,Hyderabad
+
+MALLS IN AHMEDABAD
+
+1. Ahmedabad One Mall,Vastrapur,Ahmedabad
+2. Himalaya Mall,Drive In Rd,Ahmedabad
+3. Iscon Mega Mall,Rajpath Club,Ahmedabad
+4. Gulmohar Park Mall,Satellite Road,Ahmedabad
+5. Shree Balaji Agora Mall,Sardar Patel Ring Rd,Ahmedabad
+6. Acropolis Mall,Thaltej,Ahmedabad
+7. R3 The Mall,Memnagar,Ahmedabad
+8. Sardar Patel Mall,Sardar Patel Marg,Ahmedabad
+9. CG Square Mall,Gulbai Tekra,Ahmedabad
+10. CENTRAL,Ambawadi Circle,Ahmedabad
+
+MALLS IN JAIPUR
+
+1. Pink Square,Adarsh Nagar,Jaipur
+2. MGF Metropolitan Mall,Civil Lines,Jaipur
+3. World Trade Park,Malviya Nagar,Jaipur
+4. City Mall,Ashok Nagar,Jaipur
+5. Crystal Mall,Sawai Jai Singh Hwy,Jaipur
+6. Crystal Court Mall,Malviya Nagar,Jaipur
+7. Apex Mall,Lalkothi,Jaipur
+8. Arya Square Shopping Mall,Shastri Nagar,Jaipur
+9. Elements Mall,Ajmer Rd,Jaipur
+10. Gaurav Tower,Malviya Nagar,Jaipur
+
+MALLS IN CHANDIGARH
+
+1. Elante Mall,Industrial Area Phase 1,Chandigarh
+2. DLF City Centre Mall,Kishangarh,Chandigarh
+3. Piccadily Square Mall,Sector 34,Chandigarh
+4. City Emporium Mall,Industrial Area Phase 1,Chandigarh
+5. Tdi Mall,Sector 17,Chandigarh
+6. VR Punjab,Sahibzada Ajit Singh Nagar,Chandigarh
+7. Fun Republic,Manimanjra,Chandigarh
+8. KC Shopping Mall,Sector 17,Chandigarh
+9. Centra Mall,Industrial Area Phase 1,Chandigarh
+10. Bestech Square Mall,Sector 66,Chandigarh
