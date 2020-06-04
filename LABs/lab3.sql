@@ -1,6 +1,6 @@
 19)
 
- select name, length(name) from student;
+select name, length(name) from student;
 op->
 
 NAME                 LENGTH(NAME)
@@ -13,7 +13,7 @@ Peltier                         7
 
 20)
 
- select substr(dept_name,3,3) from department;
+select substr(dept_name,3,3) from department;
 
 op->
 
