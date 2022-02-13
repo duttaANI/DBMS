@@ -1,0 +1,251 @@
+ERROR CODE:
+SET SERVEROUTPUT ON
+DECLARE 
+	n VARCHAR(20);
+BEGIN
+	SELECT name INTO n
+	FROM STUDENT;
+        dbms_output.put_line('hi'||n);
+END;
+/
+
+CORRECT CODE:
+(EXPLICIT CURSOR)
+SET SERVEROUTPUT ON
+DECLARE 
+	n VARCHAR(20);
+	CURSOR c1 IS SELECT name FROM Student;
+BEGIN
+	OPEN c1;
+	LOOP 
+		FETCH c1 INTO n;
+		EXIT WHEN c1%NOTFOUND;
+		dbms_output.put_line(n);
+	END LOOP;
+        
+	CLOSE c1;
+END;
+/
+
+(IMPLICIT CURSOR)
+
+SET SERVEROUTPUT ON
+DECLARE 
+	n VARCHAR2(20);
+	CURSOR c1 IS SELECT name FROM Student;
+BEGIN
+	FOR r IN c1
+	LOOP 
+		dbms_output.put_line(r.name);
+	END LOOP;
+
+END;
+/
+
+(PARAMETERIZED CURSOR)
+
+/*------------------------------------------*/
+
+q1)
+
+CREATE TABLE SALARY_RAISE(
+instructor_id    VARCHAR2(5),
+raise_date       DATE,
+raise_amt        NUMBER(8,2),
+primary key (instructor_id)
+);
+
+SET SERVEROUTPUT ON
+DECLARE
+	CURSOR c1 IS SELECT * FROM Instructor;
+	n instructor%ROWTYPE;
+	n1 salary_raise.raise_amt%TYPE;
+BEGIN
+	OPEN c1;
+	
+	LOOP
+	FETCH c1 INTO n;
+        EXIT WHEN c1%NOTFOUND;
+	n1 := n.salary*(1.05);
+	INSERT INTO salary_raise VALUES (n.id,sysdate,n.salary*0.05);
+	UPDATE instructor set salary = n1 WHERE instructor.id= n.id;
+	END LOOP;
+	CLOSE c1;
+END;
+/
+
+OP=>
+INSTR RAISE_DAT  RAISE_AMT
+----- --------- ----------
+10101 11-MAR-20       3250
+12121 11-MAR-20       4500
+15151 11-MAR-20       2000
+22222 11-MAR-20       4750
+32343 11-MAR-20       3000
+33456 11-MAR-20       4350
+45565 11-MAR-20       3750
+58583 11-MAR-20       3100
+76543 11-MAR-20       4000
+76766 11-MAR-20       3600
+83821 11-MAR-20       4600
+
+
+ID    NAME                 DEPT_NAME                SALARY
+----- -------------------- -------------------- ----------
+10101 Srinivasan           Comp. Sci.                68250
+12121 Wu                   Finance                   94500
+15151 Mozart               Music                     42000
+22222 Einstein             Physics                   99750
+32343 El Said              History                   63000
+33456 Gold                 Physics                   91350
+45565 Katz                 Comp. Sci.                78750
+
+/*------------------------------------------*/
+
+
+q2)
+SET SERVEROUTPUT ON
+DECLARE
+	CURSOR c1 IS SELECT * FROM STUDENT ORDER BY tot_cred;
+	n student%ROWTYPE;
+BEGIN
+	OPEN c1;
+	LOOP
+	FETCH c1 INTO n;
+	dbms_output.put_line(n.id ||' '  || n.name ||' '  || n.dept_name ||' '  || n.tot_cred );
+	EXIT WHEN c1%ROWCOUNT = 11;
+	end loop;
+	CLOSE c1;
+END;
+/
+
+/*------------------------------------------*/
+
+SELECT COURSE.COURSE_ID , COURSE.TITLE , COURSE.DEPT_NAME , COURSE.CREDITS,
+INSTRUCTOR.NAME , SECTION.BUILDING , SECTION.ROOM_NUMBER , SECTION.TIME_SLOT_ID
+FROM SECTION ,COURSE,TEACHES,INSTRUCTOR
+WHERE
+SECTION.COURSE_ID = TEACHES.COURSE_ID AND
+TEACHES.ID = INSTRUCTOR.ID AND
+SECTION.COURSE_ID = COURSE.COURSE_ID;
+
+
+Q3)
+
+SET SERVEROUTPUT ON
+DECLARE
+	CURSOR c1 IS SELECT COURSE.COURSE_ID AS A , COURSE.TITLE AS B, COURSE.DEPT_NAME AS C, COURSE.CREDITS AS D,
+	INSTRUCTOR.NAME AS E, SECTION.BUILDING AS F, SECTION.ROOM_NUMBER AS G, SECTION.TIME_SLOT_ID AS H
+	FROM SECTION ,COURSE,TEACHES,INSTRUCTOR
+	WHERE
+	SECTION.COURSE_ID = TEACHES.COURSE_ID AND
+	TEACHES.ID = INSTRUCTOR.ID AND
+	SECTION.COURSE_ID = COURSE.COURSE_ID;
+
+	CURSOR c2 IS SELECT COUNT(TAKES.ID) AS TOT_STU ,COURSE_ID AS I FROM TAKES GROUP BY COURSE_ID;
+
+BEGIN
+	FOR R1 IN c1
+	LOOP 
+		FOR R2 IN c2
+		LOOP
+		IF(R1.A=R2.I) THEN
+			dbms_output.put_line(R1.A||' '||R1.B||' '||R1.C||' '||R1.E||' '||R1.F||' '||R1.G||' '||R1.H||' '||R2.TOT_STU);
+                END IF;
+                END LOOP;
+	END LOOP;
+
+END;
+/
+OP=>
+CS-101 Intro. to Computer Science Comp. Sci. Srinivasan Packard 101 H 7
+CS-101 Intro. to Computer Science Comp. Sci. Srinivasan Packard 101 F 7
+CS-315 Robotics Comp. Sci. Srinivasan Watson 120 D 2
+CS-347 Database System Concepts Comp. Sci. Srinivasan Taylor 3128 A 2
+
+/*----------------------------------------------------------------------------------*/
+
+SELECT ID FROM TAKES WHERE COURSE_ID='CS-101' AND ID=(SELECT ID FROM STUDENT WHERE STUDENT.TOT_CRED<30);
+
+Q4)
+
+SET SERVEROUTPUT ON
+DECLARE
+	CURSOR c1 IS SELECT ID FROM TAKES WHERE COURSE_ID='CS-101' AND ID=(SELECT ID FROM STUDENT WHERE STUDENT.TOT_CRED<30);
+
+	n student%ROWTYPE;
+BEGIN
+	FOR r IN c1
+	LOOP 
+		delete from takes where id = r.id;
+	END LOOP;
+	
+END;
+/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
